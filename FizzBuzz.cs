@@ -23,3 +23,29 @@ public class Solution {
         return list;
     }
 }
+
+public class Solution2 {
+    public IList<string> FizzBuzz(int n) {
+        string[] answers = new string[n];
+        for(int i = 0; i < n; i++)
+        {
+            if((i + 1) % 3 == 0 && (i + 1) % 5 == 0)
+            {
+                 answers[i] =  "FizzBuzz";
+            }
+            else if((i + 1) %  3 == 0)
+            {
+                 answers[i] = "Fizz";
+            }
+            else if((i + 1) % 5 == 0)
+            {
+                answers[i] = "Buzz";
+            }
+            else
+            {
+                answers[i] = (i + 1).ToString();
+            }
+        }
+        return answers;
+    }
+}
