@@ -54,7 +54,7 @@ void GetNumsInput()
     }
 }
 
-void Filter()
+void Sort()
 {
     for (int i = 0; i < numCount; i++)
     {
@@ -83,7 +83,7 @@ int main ()
     if(GetFrameSize())
     {
         GetNumsInput();
-        Filter();
+        Sort();
         Output();
     }
     return 0;
