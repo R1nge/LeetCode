@@ -24,6 +24,22 @@ const int frameSizeLimit = 25;
 float num;
 vector <float> numArr;
 
+bool GetFrameSize();
+void GetNumsInput();
+void Sort();
+void Output();
+
+int main ()
+{
+    if(GetFrameSize())
+    {
+        GetNumsInput();
+        Sort();
+        Output();
+    }
+    return 0;
+}
+
 bool GetFrameSize()
 {
     cout << "Enter Frame Size" << endl;
@@ -74,15 +90,4 @@ void Output()
     {
         cout << setprecision(3) << fixed << numArr[i] << " ";
     }
-}
-
-int main ()
-{
-    if(GetFrameSize())
-    {
-        GetNumsInput();
-        Sort();
-        Output();
-    }
-    return 0;
 }
