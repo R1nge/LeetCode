@@ -67,8 +67,7 @@ void Filter()
                 numArr[j] = temp;
             }
         }
-    }
-        
+    }        
 }
 
 void Output()
