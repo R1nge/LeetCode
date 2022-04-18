@@ -22,8 +22,8 @@ Sample Output 1:
 */
 int frameSize, numCount;
 const int numLimit = 25;
-double num;
-vector <double> numArr;
+float num;
+vector <float> numArr;
 
 bool GetFrameSize()
 {
