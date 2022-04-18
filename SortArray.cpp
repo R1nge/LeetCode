@@ -21,7 +21,7 @@ Sample Output 1:
 0.039 0.086 0.170 0.306 0.410 0.469 0.549 0.690 0.678 0.876
 */
 int frameSize, numCount;
-const int numLimit = 25;
+const int frameSizeLimit = 25;
 float num;
 vector <float> numArr;
 
@@ -30,9 +30,9 @@ bool GetFrameSize()
     cout << "Enter Frame Size" << endl;
     cin >> frameSize;
     
-    if(frameSize > numLimit)
+    if(frameSize > frameSizeLimit)
     {
-        cout << "Number is greater than " << numLimit;
+        cout << "Number is greater than " << frameSizeLimit;
         return false;
     }
     else if (frameSize % 2 == 0)
