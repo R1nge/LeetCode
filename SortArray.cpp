@@ -20,7 +20,7 @@ Sample Input 1:
 Sample Output 1:
 0.039 0.086 0.170
 */
-int frameSize, numCount;
+int frameSize;
 const int frameSizeLimit = 25;
 float num;
 vector <float> numArr;
@@ -50,15 +50,14 @@ void GetNumsInput()
     {
         cin >> num;
         numArr.push_back(num);
-        numCount++;
     }
 }
 
 void Sort()
 {
-    for (int i = 0; i < numCount; i++)
+    for (int i = 0; i < frameSize; i++)
     {
-        for (int j = i + 1; j < numCount; j++)
+        for (int j = i + 1; j < frameSize; j++)
         {
             if(numArr[i] > numArr[j])
             {
@@ -72,7 +71,7 @@ void Sort()
 
 void Output()
 {
-    for (int i = 0; i < numCount; i++)
+    for (int i = 0; i < frameSize; i++)
     {
         cout << setprecision(3) << fixed << numArr[i] << " ";
     }
