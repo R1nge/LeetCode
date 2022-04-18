@@ -57,7 +57,18 @@ void GetNumsInput()
 
 void Filter()
 {
-    
+    for (int i = 0; i < numCount; i++)
+    {
+        for (int j = i + 1; j < numCount; j++)
+        {
+            if(numArr[i] > numArr[j]){
+                double temp = numArr[i];
+                numArr[i] = numArr[j];
+                numArr[j] = temp;
+            }
+        }
+    }
+        
 }
 
 void Output()
