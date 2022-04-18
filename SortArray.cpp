@@ -27,26 +27,28 @@ int frameSize, numCount;
 const int numLimit = 25;
 double num;
 vector <double> numArr;
-bool isValid = true;
 
-void GetFrameSize()
+bool GetFrameSize()
 {
+    cout << "Enter Frame Size" << endl;
     cin >> frameSize;
     
     if(frameSize > numLimit)
     {
         cout << "Number is greater than " << numLimit;
-        isValid = false;
+        return false;
     }
     else if (frameSize % 2 == 0)
     {
         cout << "Number is not odd";
-        isValid = false;
+        return false;
     }
+    return true;
 }
 
 void GetNumsInput()
 {
+    cout << "Enter Numbers" << endl;
     for(int i = 0; i < frameSize; i++)
     {
         cin >> num;
@@ -80,8 +82,7 @@ void Output()
 
 int main ()
 {
-    GetFrameSize();
-    if(isValid)
+    if(GetFrameSize())
     {
         GetNumsInput();
         Filter();
