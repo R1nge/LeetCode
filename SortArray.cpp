@@ -60,7 +60,7 @@ void Sort()
         {
             if(numArr[i] > numArr[j])
             {
-                double temp = numArr[i];
+                float temp = numArr[i];
                 numArr[i] = numArr[j];
                 numArr[j] = temp;
             }
