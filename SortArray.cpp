@@ -103,7 +103,7 @@ void BubbleSort()
                 swapped = true;
             }
             
-            if(swapped = false)
+            if(swapped == false)
                 break;
         }
     }
