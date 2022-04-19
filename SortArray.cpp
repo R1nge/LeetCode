@@ -23,25 +23,23 @@ int frameSize;
 const int FRAME_SIZE_LIMIT = 25;
 vector <float> numArr;
 
-bool GetFrameSize();
-void GetNumsInput();
-void Sort();
-void BubbleSort();
-void Output();
+bool getFrameSize();
+void getNumsInput();
+void sort();
+void output();
 
 int main ()
 {
-    if(GetFrameSize())
+    if(getFrameSize())
     {
-        GetNumsInput();
-        //Sort();
-        BubbleSort();
-        Output();
+        getNumsInput();
+        sort();
+        output();
     }
     return 0;
 }
 
-bool GetFrameSize()
+bool getFrameSize()
 {
     cout << "Enter Frame Size" << endl;
     cin >> frameSize;
@@ -59,7 +57,7 @@ bool GetFrameSize()
     return true;
 }
 
-void GetNumsInput()
+void getNumsInput()
 {
     float num;
     cout << "Enter Numbers" << endl;
@@ -70,7 +68,7 @@ void GetNumsInput()
     }
 }
 
-void Sort()
+void sort()
 {
     for (int i = 0; i < frameSize; i++)
     {
@@ -86,30 +84,7 @@ void Sort()
     }        
 }
 
-void BubbleSort()
-{
-    bool swapped;
-
-    for(int i = 0; i < frameSize - 1; i++)
-    {
-        swapped = false;
-        for (int j = 0; j < frameSize -i - 1; j++)
-        {
-            if(numArr[j] > numArr[j + 1])
-            {
-                float temp = numArr[j];
-                numArr[j] = numArr[j + 1];
-                numArr[j + 1] = temp;
-                swapped = true;
-            }
-            
-            if(swapped == false)
-                break;
-        }
-    }
-}
-
-void Output()
+void output()
 {
     for (int i = 0; i < frameSize; i++)
     {
