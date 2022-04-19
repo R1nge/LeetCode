@@ -26,7 +26,7 @@ vector <float> numArr;
 bool GetFrameSize();
 void GetNumsInput();
 void Sort();
-void BubleSort();
+void BubbleSort();
 void Output();
 
 int main ()
@@ -35,7 +35,7 @@ int main ()
     {
         GetNumsInput();
         //Sort();
-        BubleSort();
+        BubbleSort();
         Output();
     }
     return 0;
@@ -86,7 +86,7 @@ void Sort()
     }        
 }
 
-void BubleSort()
+void BubbleSort()
 {
     bool swapped;
 
