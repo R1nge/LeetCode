@@ -26,6 +26,7 @@ vector <float> numArr;
 bool GetFrameSize();
 void GetNumsInput();
 void Sort();
+void BubleSort();
 void Output();
 
 int main ()
@@ -33,7 +34,8 @@ int main ()
     if(GetFrameSize())
     {
         GetNumsInput();
-        Sort();
+        //Sort();
+        BubleSort();
         Output();
     }
     return 0;
@@ -84,6 +86,24 @@ void Sort()
     }        
 }
 
+void BubleSort()
+{
+    bool is_sorted = false;
+    while (not is_sorted){
+        int i = 0;
+        is_sorted = true;
+        while (i < frameSize - 1){
+            if(numArr[i] > numArr[i+1])
+            {
+                float temp = numArr[i];
+                numArr[i] = numArr[i+ 1];
+                numArr[i+1] = temp;
+                is_sorted = false;
+            }
+            i++;
+        }
+    }
+}
 void Output()
 {
     for (int i = 0; i < frameSize; i++)
