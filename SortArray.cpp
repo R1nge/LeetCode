@@ -93,13 +93,13 @@ void BubleSort()
     for(int i = 0; i < frameSize - 1; i++)
     {
         swapped = false;
-        for (int j = 0; j < frameSize - i - 1; j++)
+        for (int j = 0; j < frameSize -i - 1; j++)
         {
-            if(numArr[j] > numArr[j+1])
+            if(numArr[j] > numArr[j + 1])
             {
                 float temp = numArr[j];
-                numArr[j] = numArr[j+ 1];
-                numArr[j+1] = temp;
+                numArr[j] = numArr[j + 1];
+                numArr[j + 1] = temp;
                 swapped = true;
             }
             
