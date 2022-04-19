@@ -88,22 +88,27 @@ void Sort()
 
 void BubleSort()
 {
-    bool is_sorted = false;
-    while (not is_sorted){
-        int i = 0;
-        is_sorted = true;
-        while (i < frameSize - 1){
-            if(numArr[i] > numArr[i+1])
+    bool swapped;
+
+    for(int i = 0; i < frameSize - 1; i++)
+    {
+        swapped = false;
+        for (int j = 0; j < frameSize - i - 1; j++)
+        {
+            if(numArr[j] > numArr[j+1])
             {
-                float temp = numArr[i];
-                numArr[i] = numArr[i+ 1];
-                numArr[i+1] = temp;
-                is_sorted = false;
+                float temp = numArr[j];
+                numArr[j] = numArr[j+ 1];
+                numArr[j+1] = temp;
+                swapped = true;
             }
-            i++;
+            
+            if(swapped = false)
+                break;
         }
     }
 }
+
 void Output()
 {
     for (int i = 0; i < frameSize; i++)
