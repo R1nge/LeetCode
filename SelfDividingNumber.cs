@@ -9,18 +9,11 @@ public class Solution {
             for(int i = 0; i < charArray.Length; i++)
             {
                 num = (int)Char.GetNumericValue(charArray[i]);
-                if(num != 0)
+                if(num != 0 && left % num == 0)
                 {
-                    if(left % num == 0)
+                    if(i == charArray.Length - 1)
                     {
-                        if(i == charArray.Length - 1)
-                        {
-                            list.Add(left);
-                        }
-                    }
-                    else
-                    {
-                        break;
+                        list.Add(left);
                     }
                 }
                 else
