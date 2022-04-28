@@ -4,11 +4,7 @@ public class Solution {
         var arr = str.ToCharArray();
         Array.Reverse(arr);
         var str2 = new string(arr);
-        if(str.Equals(str2))
-        {
-            return true;
-        }
-        return false;
+        return str.Equals(str2);
     }
 }
 
@@ -23,12 +19,6 @@ public class Solution2 {
             result = (result * 10) + lastDigit;    
             num = num / 10;
         }
-        
-        if(x == result)
-        {
-            return true;
-        }
-        
-        return false;
+        return x == result;
     }
 }
