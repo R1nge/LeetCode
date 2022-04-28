@@ -9,11 +9,7 @@ public class Solution {
                 sum += i;
             }
         }
-        if(sum == num)
-        {
-            return true;
-        }
-        return false;
+        return sum == num;
     }
 }
 //Still pretty slow
@@ -27,10 +23,22 @@ public class Solution2 {
                 sum += i;
             }
         }
-        if(sum == num)
+        return sum == num;
+    }
+}
+//Very fast
+public class Solution3 {
+    public bool CheckPerfectNumber(int num) {
+        if (num == 1)
+           return false;
+        int sum = 1;
+        for (int i = 2; i <= Math.Sqrt(num); i++)
         {
-            return true;
+            if(num % i == 0)
+            {
+                 sum += i + num / i;
+            }
         }
-        return false;
+        return sum == num;
     }
 }
