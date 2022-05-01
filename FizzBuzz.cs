@@ -26,7 +26,7 @@ public class Solution {
 
 public class Solution2 {
     public IList<string> FizzBuzz(int n) {
-        string[] answers = new string[n];
+        var answers = new string[n];
         for(int i = 0; i < n; i++)
         {
             if((i + 1) % 3 == 0 && (i + 1) % 5 == 0)
