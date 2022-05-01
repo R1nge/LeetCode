@@ -1,7 +1,7 @@
 public class Solution {
     public IList<int> SelfDividingNumbers(int left, int right) {
-        char[] charArray = new char[9999]; //new char[left + right + 1];
-        List<int> list = new List<int>();
+        var charArray = new char[9999]; //new char[left + right + 1];
+        var list = new List<int>();
         int num = 0;
         while(left <= right)
         {
