@@ -5,18 +5,19 @@ public class Solution {
         
         for(int i = 0; i < ops.Length; i++)
         {
+            int len = list.Count;
             switch (ops[i])
             {
-                case "+":
-                    var first = Convert.ToInt32(list[list.Count - 1]); //BUG
-                    var second = Convert.ToInt32(list[list.Count - 2]);
+                case "C":
+                    var first = Convert.ToInt32(list[len - 1]);
+                    var second = Convert.ToInt32(list[len - 2]);
                     list.Add(first + second);
                     break;
                 case "D":
-                    list.Add(Convert.ToInt32(list[list.Count - 1]) * 2);
+                    list.Add(Convert.ToInt32(list[len - 1]) * 2);
                     break;
-                case "C":
-                    list.RemoveAt(list.Count - 1);    
+                case "+":
+                    list.RemoveAt(len - 1);    
                     break;
                 default:
                     list.Add(Convert.ToInt32(ops[i]));    
@@ -33,7 +34,7 @@ public class Solution {
     }
 }
 
-public class Solution2 {
+public class Solution {
     public int CalPoints(string[] ops) {        
         Stack<int> stack = new Stack<int>();
         int result = 0;
@@ -42,18 +43,17 @@ public class Solution2 {
         {
             switch (ops[i])
             {
-                case "+":
-                    var first = Convert.ToInt32(stack.Peek());
-                    stack.Pop();
-                    var second = Convert.ToInt32(stack.Peek());
-                    stack.Push(first);
-                    stack.Push(first + second);
+                case "C":
+                    stack.Pop();    
                     break;
                 case "D":
                     stack.Push(Convert.ToInt32(stack.Peek()) * 2);
                     break;
-                case "C":
-                    stack.Pop();    
+                case "+":
+                    var first = Convert.ToInt32(stack.Pop());
+                    var second = Convert.ToInt32(stack.Peek());
+                    stack.Push(first);
+                    stack.Push(first + second);
                     break;
                 default:
                     stack.Push(Convert.ToInt32(ops[i]));    
