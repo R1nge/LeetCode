@@ -5,23 +5,22 @@ public class Solution {
         
         for(int i = 0; i < ops.Length; i++)
         {
-            if(ops[i].Equals("+"))
+            switch (ops[i])
             {
-                var first = Convert.ToInt32(list[list.Count - 1]); //BUG
-                var second = Convert.ToInt32(list[list.Count - 2]);
-                list.Add(first + second);
-            }
-            else if (ops[i].Equals("D"))
-            {
-                list.Add(Convert.ToInt32(list[list.Count - 1]) * 2);
-            }
-            else if(ops[i].Equals("C"))
-            {
-                list.RemoveAt(list.Count - 1);    
-            }
-            else
-            {
-                list.Add(Convert.ToInt32(ops[i]));    
+                case "+":
+                    var first = Convert.ToInt32(list[list.Count - 1]); //BUG
+                    var second = Convert.ToInt32(list[list.Count - 2]);
+                    list.Add(first + second);
+                    break;
+                case "D":
+                    list.Add(Convert.ToInt32(list[list.Count - 1]) * 2);
+                    break;
+                case "C":
+                    list.RemoveAt(list.Count - 1);    
+                    break;
+                default:
+                    list.Add(Convert.ToInt32(ops[i]));    
+                    break;
             }
         }
         
@@ -41,25 +40,24 @@ public class Solution2 {
         
         for(int i = 0; i < ops.Length; i++)
         {
-            if(ops[i].Equals("+"))
+            switch (ops[i])
             {
-                var first = Convert.ToInt32(stack.Peek());
-                stack.Pop();
-                var second = Convert.ToInt32(stack.Peek());
-                stack.Push(first);
-                stack.Push(first + second);
-            }
-            else if (ops[i].Equals("D"))
-            {
-                stack.Push(Convert.ToInt32(stack.Peek()) * 2);
-            }
-            else if(ops[i].Equals("C"))
-            {
-                stack.Pop();    
-            }
-            else
-            {
-                stack.Push(Convert.ToInt32(ops[i]));    
+                case "+":
+                    var first = Convert.ToInt32(stack.Peek());
+                    stack.Pop();
+                    var second = Convert.ToInt32(stack.Peek());
+                    stack.Push(first);
+                    stack.Push(first + second);
+                    break;
+                case "D":
+                    stack.Push(Convert.ToInt32(stack.Peek()) * 2);
+                    break;
+                case "C":
+                    stack.Pop();    
+                    break;
+                default:
+                    stack.Push(Convert.ToInt32(ops[i]));    
+                    break;
             }
         }
         
