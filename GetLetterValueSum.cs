@@ -3,7 +3,7 @@ class Solution
 {
   static void Main() 
   {
-    var s = Solution("microspectrophotometries");
+    var s = GetLetterValueSum("microspectrophotometries");
     Console.Write(s);
   }
 
